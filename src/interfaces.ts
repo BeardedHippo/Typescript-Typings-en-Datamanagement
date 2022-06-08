@@ -1,3 +1,5 @@
+// Dit zijn de interfaces die gebruikt zijn voor alle classes en tracks
+
 export interface AlbumStateInterface {
     albumID: number,
     albumName: string,

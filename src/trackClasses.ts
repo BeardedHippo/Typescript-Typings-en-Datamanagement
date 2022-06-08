@@ -1,3 +1,7 @@
+// Dit bestand bestaat uit classes waarmee verschillende soorten tracks gemaakt kunnen worden, op basis van de data
+// Dit zou in een frontend gebruikt kunnen worden met een formulier om nieuwe tracks in albums te plaatsen en
+// vervolgens in het database te zetten.
+
 import { TrackInterface } from './interfaces.js';
 
 export abstract class Track implements TrackInterface {
@@ -62,6 +66,7 @@ export class TracksWithVideo extends Track {
     }
 }
 
+// Deze class initialiseert een collectie aan alle huidige tracks, op basis van de data dat als argument binnen komt.
 export class InitAllTracks {
     constructor(public allNewTracks: TrackInterface[]) {}
 }

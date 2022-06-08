@@ -1,3 +1,5 @@
+// Dit is een voorbeeld van een basis front-end waarin de state geimporteerd wordt voor alle data.
+
 import { state } from './state.js'
 
 function getPersonalAlbums(album: any) {

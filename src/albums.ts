@@ -1,4 +1,6 @@
-import {AlbumOnlySingles, AlbumOnlyTracks, AlbumSinglesAndTracks} from './albumClasses.js'; 
+// Dit is voorbeeld data voor het maken van allemaal verschillende soorten albums met bijbehorende tracks.
+
+import {AlbumOnlySingles, AlbumOnlyTracks, AlbumSinglesAndTracks} from './albumClasses.js';
 
 export const allNewAlbums = [
     //// All Albums with only singles 

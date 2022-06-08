@@ -1,3 +1,5 @@
+// Dit is voorbeeld data voor het maken van allemaal verschillende soorten tracks met bijbehorende albums.
+
 import {TracksAudioOnly} from './trackClasses.js';
 
 export const allNewTracks = [

@@ -1,5 +1,9 @@
+// Dit bestand bestaat uit classes waarmee verschillende soorten albums gemaakt kunnen worden, op basis van de data
+// Dit zou in een frontend gebruikt kunnen worden met een formulier om nieuwe albums in het database te zetten.
+
 import { AlbumInterface, AlbumStateInterface, TrackInterface } from './interfaces.js';
 
+// Deze class initialiseert een collectie aan alle huidige albums, op basis van de data dat als argument binnenkomt.
 export class InitAllAlbums {
     constructor(public allNewAlbums: AlbumInterface[]) {
         let fullAlbumList = [] as AlbumStateInterface[];
@@ -67,7 +71,7 @@ export class CreateAlbum implements AlbumStateInterface {
                     streaming: false,
                     trackName: "stringA",
                 }]
-            }else if (this.albumType === 'mix-album'){
+            } else if (this.albumType === 'mix-album'){
                 this.singlesList = [{
                     albumID: [0, 2, 3],
                     albumIndex: [0, 1, 3],
@@ -101,7 +105,6 @@ export class CreateAlbum implements AlbumStateInterface {
 
 export abstract class Album implements AlbumInterface {
     constructor(
-
         public albumName: string,
         public albumDesc: string,
         public specialEdition: boolean,

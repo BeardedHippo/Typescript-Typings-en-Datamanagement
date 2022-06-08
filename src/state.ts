@@ -1,10 +1,10 @@
+// Dit is het bestand waarin alles samenkomt.
+
 import { AlbumStateInterface, TrackInterface, AlbumInterface} from './interfaces.js';
 import {allNewTracks} from './tracks.js';
 import {allNewAlbums} from './albums.js';
 import {InitAllAlbums, CreateAlbum} from './albumClasses.js';
 import {InitAllTracks} from './trackClasses.js'; 
-
-
 
 export class State {
     private albums: AlbumStateInterface[] = [];
@@ -148,12 +148,17 @@ export class State {
     private addTrack(arrayOfTracks: TrackInterface[]) {
         this.tracks.push(...arrayOfTracks);
     }
-    
+
+    // 4: Om alle tracks te intialiseren wordt de InitAllTracks class gebruikt waarbij de data als argument mee wordt gegeven
+    // 5: Vervolgens wordt er aan de state alle tracks toegevoegd
     public initTracks() {
         let initAllTracks = new InitAllTracks(allNewTracks)
         this.addTrack(initAllTracks.allNewTracks);
     }
 
+    // 6: Albums zijn net wat ingewikkelder. Eerst wordt er een array aan albums gemaakt met de InitAllAlbums class, waarbij
+    // de data als argument mee wordt gegeven. Daarna wordt er over al deze albums heen geloopt en wordt er steeds een
+    // korte termijn referentie gemaakt naar die album. Op deze manier kan deze album gesorteerd worden op het type album.
     public initAlbums() {
         let initAllAlbums = new InitAllAlbums(allNewAlbums);
 
@@ -201,11 +206,11 @@ export class State {
     }
 }
 
-/// Initialise state
+// 1: Eerst wordt er een singleton class gemaakt om een local state met alle albums en tracks dynamisch bij te houden
 export const state = State.getInstance();
 
-/// Initialise all tracks
+// 2: Dan worden alle tracks geïnitialiseerd
 state.initTracks();
 
-/// Initialise all albums
+// 3: Tot slot worden alle albums geïnistialiseerd
 state.initAlbums();
